@@ -1,5 +1,4 @@
 
-
 def openAndCount(name):
     numberOfCharechters = [0]*256
     with open(name,r) as mainFile:
