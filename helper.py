@@ -7,6 +7,7 @@ class Leaf(Tree)
 
 class Node(Tree)
     def __init__(self,left=None,right=None):
+
         if(left and right):
             self.left = left
             self.right = right
