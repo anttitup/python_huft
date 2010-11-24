@@ -16,21 +16,20 @@ class Node(Tree)
         else if(left):
             self.left = left
             Tree.__init__(left.freq)
-        else if(right)
+        else if(right):
             self.left = left
             Tree.__init__(left.freq)
 
 class Tree
-    def __init__(self,freq = 0):
+    def __init__(self, freq = 0):
         self.freq = freq
 
-    def __sub__(self,other):
+    def __sub__(self, other):
        return self.freq - other.freq
 
 
 
 class Heap
-    
     def __init__(self,numberOfMarks):
         self.heap = [0] * len(numberOfMarks)
 
@@ -54,19 +53,22 @@ class Heap
                     parent = 1 * parent/2
 
     def heapify(i)
-        if(!keko):
+        
+		if(!keko):
             return None
-        left = 2*i +1
+        
+		left = 2*i +1
         right = 2*i+2
 
         if(left <= len(self.heap)-1 and self.heap[left].freq < self.heap[i].freq:
             smallest  = left
-         else :
+        else :
             smallest = i
 
-         if(right<=len(self.heap-1) and self.heap[right].freq<self.heap[smallest].freq):
-         smallest = right
-         if(smallest!=i):
+        if(right<=len(self.heap-1) and self.heap[right].freq<self.heap[smallest].freq):
+         	smallest = right
+         
+		if(smallest!=i):
             swap(i,smallest)
             heapify(smallest)
 
