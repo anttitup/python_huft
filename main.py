@@ -1,23 +1,24 @@
-from help.py import *
+# -*- coding: utf-8 -*-
+from helper import *
 
 def openAndCount(name):
     numberOfCharechters = [0]*256
-    with open(name,r) as mainFile:
-        while(i):
+    with open(name,"r") as mainFile:
+        while(mark):
             mark = mainFile.read()
             if(not mark): 
-				break
+		break
             else: 
-				numberOfCharechters[mark]=+1
-   
-   numberOfCharecters[255]=+1 #eof
-   return numberOfCharecters
+		numberOfCharechters[mark]=+1
+	numberOfCharecters[255]=+1 #eof
+	return numberOfCharecters
 
 def generateTree(numberOfCharechters):
-    heap = Heap()
-	for(char,node in range(numberOfCharecters) if node!=0):
-		leaf = Leaf(index,freq)
-		heap.push(leaf)
+	heap = Heap()
+	for i in range(len(numberOfCharechters)):
+		if i!=0:
+			leaf = Leaf(i,numberOfCharechters[i])
+			heap.push(leaf)
 	return heap
 
 def makeOneTree(heap):
@@ -44,14 +45,17 @@ def writeEncode(filename,table,tree,heapSize):
 	
 	encFile.write(heapSize)
 	
-	for(char,freq in range(table) if node !=0):
-		encFile.write(char+" "+freq)
+	for char in range(table):
+		if node !=0:
+			encFile.write(char+" "+table[char])
 		
-	for(char in mainFile.read(1)):
+	for char in mainFile.read(1):
 		writeInBits(encFile,table[char])
 	
 	writeInBits(encFile,table[255])
 
-		
-	
-	
+num = openAndCount("test.txt")		
+heap = generateTree(num)
+tree = makeOneTree(heap)	
+table=makePrefix(tree,prefix=[])	
+writeEncode("test.txt",table,tree,len(table))
